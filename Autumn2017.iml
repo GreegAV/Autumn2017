@@ -4,6 +4,7 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$/../Autumn2017">
       <sourceFolder url="file://$MODULE_DIR$/../Autumn2017/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../Autumn2017/.idea" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
