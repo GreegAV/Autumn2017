@@ -5,10 +5,13 @@ package second;
  */
 public class pack {
     public static void main(String[] args) {
+        double i=Double.NaN;
 
-String i=" ";
+        System.out.println(i);
         if ( i != i )
             System.out.println("Hi!");
+        else
+            System.out.println("Fuck :(");
 
     }
 }
