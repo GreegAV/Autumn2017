@@ -15,33 +15,33 @@ public class Matrix {
 +toString() возвращает строковое значение матрицы
 */
 
-    private int[][] matr;
+    private int[][] arr;
 
     Matrix(int horSize, int vertSize) {
-        matr = new int[horSize][vertSize];
+        arr = new int[horSize][vertSize];
     }
 
     public int getElement(int horSize, int vertSize) {
-        return matr[horSize][vertSize];
+        return arr[horSize][vertSize];
     }
 
     public void setElement(int horSize, int vertSize, int item) {
-        matr[horSize][vertSize] = item;
+        arr[horSize][vertSize] = item;
     }
 
     public int getVerticalSize() {
-        return matr.length;
+        return arr[0].length;
     }
 
     public int getHorizontalSize() {
-        return matr[0].length;
+        return arr.length;
     }
 
     public String toString() {
         String result = "";
-        for (int i = 0; i < matr.length; i++) {
-            for (int j = 0; j < matr[i].length; j++) {
-                result = result + matr[i][j] + " ";
+        for (int i = 0; i < getVerticalSize(); i++) {
+            for (int j = 0; j < getHorizontalSize(); j++) {
+                result = result + arr[j][i] + " ";
             }
             result = result + "\n";
         }
@@ -50,4 +50,3 @@ public class Matrix {
 }
 
 
-}
