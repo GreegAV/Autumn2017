@@ -15,17 +15,39 @@ public class Matrix {
 +toString() возвращает строковое значение матрицы
 */
 
-    private int horSize=3;
-    private int vertSize=4;
+    private int[][] matr;
 
-
-    public Matrix Matrix(int horSize, int vertSize) {
-        this.horSize = horSize;
-        this.vertSize = vertSize;
+    Matrix(int horSize, int vertSize) {
+        matr = new int[horSize][vertSize];
     }
 
-    @Override
+    public int getElement(int horSize, int vertSize) {
+        return matr[horSize][vertSize];
+    }
+
+    public void setElement(int horSize, int vertSize, int item) {
+        matr[horSize][vertSize] = item;
+    }
+
+    public int getVerticalSize() {
+        return matr.length;
+    }
+
+    public int getHorizontalSize() {
+        return matr[0].length;
+    }
+
     public String toString() {
-        return super.toString();
+        String result = "";
+        for (int i = 0; i < matr.length; i++) {
+            for (int j = 0; j < matr[i].length; j++) {
+                result = result + matr[i][j] + " ";
+            }
+            result = result + "\n";
+        }
+        return result;
     }
+}
+
+
 }

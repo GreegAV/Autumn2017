@@ -11,12 +11,12 @@ public class MatrixFactory {
 
     */
    public static Matrix createMatrix(int horSize, int vertSize){
-        int[][] matr=new int[][];
        for (int i = 0; i <horSize ; i++) {
            for (int j = 0; j <vertSize ; j++) {
-               matr[i][j]=(int)Math.random()*12;
+               matr[i][j]=(int)Math.random()*horSize*vertSize;
            }
        }
        return matr;
    }
 }
+
