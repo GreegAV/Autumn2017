@@ -22,4 +22,15 @@ public class Car {
         this.price=price;
         this.regNum=regNum;
     }
+    public String toString(){
+        String result="";
+        result+=carID+"\t";
+        result+=brand+"\t";
+        result+=model+"\t";
+        result+=year+"\t";
+        result+=color+"\t";
+        result+="$"+price+"\t";
+        result+=regNum;
+        return result;
+    }
 }

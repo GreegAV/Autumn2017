@@ -33,7 +33,7 @@ public class Runner {
 
         Matrix matr2 = MatrixFactory.createMatrix(horSize2, vertSize2);
         System.out.println("Матрица 2:");
-        System.out.println(matr2.toString());
+        System.out.println(matr2);
 
         System.out.println("Горизонтальный размер первой матрицы: " + matr1.getHorizontalSize());
         System.out.println("Вертикальный размер первой матрицы: " + matr1.getVerticalSize());
