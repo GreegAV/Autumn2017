@@ -6,36 +6,42 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
+import static les04.Search.brandSearch;
+import static les04.Search.modelSearch;
+import static les04.Search.yearSearch;
+
 /**
  * Created by avg-m on 01/11/2017.
  */
 public class Runner {
 
-    private static void brandSearch(String brand, ArrayList<Car> carList) {
-        for (Car carT : carList)
-            if ( carT.getBrand().equals(brand) ) {
-                System.out.println("Find " + brand);
-                System.out.println(carT.toString());
-            }
-    }
-
-    private static void modelSearch(String model, int age, ArrayList<Car> carList) {
-        for (Car carT : carList)
-            if ( carT.getModel().toLowerCase().equals(model) ) {
-                if ( LocalDateTime.now().getYear() - carT.getYear() > age ) {
-                    System.out.println("Find " + model + " older than " + age + " years.");
-                    System.out.println(carT.toString());
-                }
-            }
-    }
-
-    private static void yearSearch(int year, int price, ArrayList<Car> carList) {
-        for (Car carT : carList)
-            if ( carT.getYear() == year && carT.getPrice() == price ) {
-                System.out.println("Find year " + year + " with price more than " + price);
-                System.out.println(carT.toString());
-            }
-    }
+//    private static ArrayList<Car> brandSearch(String brand, ArrayList<Car> carList) {
+//        ArrayList<Car> brandList = new ArrayList<>();
+//        for (Car carT : carList)
+//            if ( carT.getBrand().toLowerCase().equals(brand.toLowerCase()) ) {
+//                brandList.add(carT);
+//            }
+//        return brandList;
+//    }
+//
+//    private static ArrayList<Car> modelSearch(String model, int age, ArrayList<Car> carList) {
+//        ArrayList<Car> modelList = new ArrayList<>();
+//        for (Car carT : carList)
+//            if ( (carT.getModel().toLowerCase().equals(model.toLowerCase()) &&
+//                 (LocalDateTime.now().getYear() - carT.getYear()) > age) ) {
+//                modelList.add(carT);
+//            }
+//        return modelList;
+//    }
+//
+//    private static ArrayList<Car> yearSearch(int year, int price, ArrayList<Car> carList) {
+//        ArrayList<Car> yearList = new ArrayList<>();
+//        for (Car carT : carList)
+//            if ( carT.getYear() == year && carT.getPrice() == price ) {
+//                yearList.add(carT);
+//            }
+//        return yearList;
+//    }
 
     public static void main(String[] args) {
 
@@ -56,15 +62,29 @@ public class Runner {
         System.out.println("Price for searching: ");
         int priceSearch = scn.nextInt();
 
-        brandSearch(brandSearch, carList);
-        modelSearch(modelSearch, ageSearch, carList);
-        yearSearch(yearSearch, priceSearch, carList);
+        ArrayList<Car> brandList = brandSearch(brandSearch, carList);
+        ArrayList<Car> modelList = modelSearch(modelSearch, ageSearch, carList);
+        ArrayList<Car> yearList = yearSearch(yearSearch, priceSearch, carList);
 
+        for (Car findedCar : brandList) {
+            System.out.println("Find " + brandSearch);
+            System.out.println(findedCar.toString());
+        }
+
+        for (Car findedCar : modelList) {
+            System.out.println("Find " + modelSearch + " older than " + ageSearch + " years.");
+            System.out.println(findedCar.toString());
+        }
+
+        for (Car findedCar : yearList) {
+            System.out.println("Find year " + yearSearch + " with price more than " + priceSearch);
+            System.out.println(findedCar.toString());
+        }
 
     }
 
     private static Car genCars(int numCar) {
-        Car car = new Car(numCar, "Chevrolet", "Aveo", 2000, "Red", 10000, "AA1111AA");
+        Car car = new Car(numCar, "Vaz", "Aveo", 2000, "Red", 10000, "AA1111AA");
         return car;
     }
 
