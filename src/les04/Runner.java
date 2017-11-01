@@ -15,7 +15,6 @@ import static les04.Search.yearSearch;
  */
 public class Runner {
 
-
     public static void main(String[] args) {
 
         int numCar = 1;
