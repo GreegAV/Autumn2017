@@ -1,4 +1,4 @@
-package second;
+package les02;
 
 /**
  * Created by avg-m on 27/10/2017.

@@ -1,4 +1,4 @@
-package third;
+package les03;
 
 import java.util.Scanner;
 
