@@ -1,7 +1,6 @@
 package les04.les04hw;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -25,7 +24,7 @@ public class Numbers {
 
         int enters = 0;
 
-        List<Integer> integers = new ArrayList<>();
+        ArrayList<Integer> integers = new ArrayList<>();
 
         while (baseNumber > 0) {
             integers.add(0, (int) baseNumber % 10);
