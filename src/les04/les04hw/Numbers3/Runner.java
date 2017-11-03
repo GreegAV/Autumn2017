@@ -1,5 +1,7 @@
 package les04.les04hw.Numbers3;
 
+import static les04.les04hw.Numbers3.Staff.*;
+
 /*
 Напишите приложение, которое определяет через сколько целых лет
 вложенная в банк сумма s под n процентов годовых достигнет
@@ -11,5 +13,27 @@ System.exit() ? Убедитесь в этом.
 
  */
 public class Runner {
+    public static void main(String[] args) {
+
+        System.out.println("Введите сумму депозита (целое число).");
+        int sumDepo=sumDepo();
+
+        System.out.println("Введите размер процентов (целое число).");
+        double percentNum=percentNum();
+
+        System.out.println("Введите желаемую сумму (целое число).");
+        int desiredSum=desiredSum();
+
+        int timeDepo=timeDeposit(sumDepo,percentNum,desiredSum);
+        if (timeDepo>0) {
+            System.out.println("Вам необходимо положить депозит на "+timeDepo+ " месяцев.");
+        }
+
+
+
+
+
+
+    }
 
 }
