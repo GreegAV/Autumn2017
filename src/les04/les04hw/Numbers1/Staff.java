@@ -1,17 +1,14 @@
-package les04.les04hw;
+package les04.les04hw.Numbers1;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- * Created by avg-m on 01/11/2017.
- */
-public class Numbers {
-    // 1. Дано целое число a. Определить число вхождений в него цифры b.
-    public static void main(String[] args) {
+public class Staff {
+    public static void enterNum() {
         Scanner scn = new Scanner(System.in);
         System.out.print("Число-база: ");
         long baseNumber = scn.nextLong();
+        long baseNumberBackup=baseNumber;
 
         System.out.print("Цифра для поиска: ");
         int searchNumber = scn.nextInt();
@@ -36,6 +33,6 @@ public class Numbers {
             }
         }
 
-        System.out.println("Вхождение цифры " + searchNumber + " в " + baseNumber + " - " + enters + " раз.");
+        System.out.println("Вхождение цифры " + searchNumber + " в " + baseNumberBackup + " - " + enters + " раз.");
     }
 }
