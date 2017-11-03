@@ -16,20 +16,17 @@ public class Runner {
     public static void main(String[] args) {
 
         System.out.println("Введите сумму депозита (целое число).");
-        int sumDepo=sumDepo();
+        int sumDepo = sumDepo();
 
         System.out.println("Введите размер процентов (целое число).");
-        double percentNum=percentNum();
+        double percentNum = percentNum();
 
         System.out.println("Введите желаемую сумму (целое число).");
-        int desiredSum=desiredSum();
+        int desiredSum = desiredSum();
 
-        int timeDepo=timeDeposit(sumDepo,percentNum,desiredSum);
-        if (timeDepo>0) {
-            System.out.println("Вам необходимо положить депозит на "+timeDepo+ " месяцев.");
+        int timeDepo = timeDeposit(sumDepo, percentNum, desiredSum);
+        if (timeDepo > 0) {
+            System.out.println("Вам необходимо положить депозит на " + timeDepo + " месяцев.");
         }
-
-
     }
-
 }
