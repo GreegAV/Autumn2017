@@ -2,16 +2,6 @@ package les04.les04hw.Numbers4;
 
 public class Staff {
 
-    public static void printTable() {
-        int count = 6;
-
-        printLeft(count);
-
-        printRight(count);
-
-
-    }
-
     public static void printRight(int count) {
         for (int i = 1; i < count; i++) {
             for (int j = count; j > 0; j--) {
