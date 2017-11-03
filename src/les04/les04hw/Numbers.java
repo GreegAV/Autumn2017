@@ -25,21 +25,18 @@ public class Numbers {
 
         int enters = 0;
 
+        List<Integer> integers = new ArrayList<>();
 
-
-            List<Integer> integers = new ArrayList<>();
-
-            while (baseNumber > 0) {
-                integers.add(0, (int)baseNumber % 10);
-                baseNumber /= 10;
+        while (baseNumber > 0) {
+            integers.add(0, (int) baseNumber % 10);
+            baseNumber /= 10;
+        }
+        for (int testNum : integers) {
+            if (testNum == searchNumber) {
+                enters++;
             }
-            for (int testNum:integers) {
-                if (testNum==searchNumber)
-                    enters++;
-            }
+        }
 
-
-
-        System.out.println("Final enters :" + enters);
+        System.out.println("Вхождение цифры " + searchNumber + " в " + baseNumber + " - " + enters + " раз.");
     }
 }
