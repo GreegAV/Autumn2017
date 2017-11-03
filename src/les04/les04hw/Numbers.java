@@ -1,5 +1,7 @@
 package les04.les04hw;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -10,7 +12,7 @@ public class Numbers {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         System.out.print("Число-база: ");
-        int baseNumber = scn.nextInt();
+        long baseNumber = scn.nextLong();
 
         System.out.print("Цифра для поиска: ");
         int searchNumber = scn.nextInt();
@@ -20,34 +22,24 @@ public class Numbers {
             System.out.print("Цифра для поиска: ");
             searchNumber = scn.nextInt();
         }
+
         int enters = 0;
-        int rest=0;
-        if ( baseNumber == searchNumber ) {
-            enters++;
-        } else {
-
-//            rest = baseNumber - (baseNumber / 10) * 10;
-//            baseNumber /= 10;
-//            System.out.println("rest :" + rest);
-//            System.out.println("basenumber :" + baseNumber);
-//            if ( rest == searchNumber ) {
-//                enters++;
-//            }
 
 
-            do {
+
+            List<Integer> integers = new ArrayList<>();
+
+            while (baseNumber > 0) {
+                integers.add(0, (int)baseNumber % 10);
                 baseNumber /= 10;
-                rest = baseNumber - (baseNumber / 10) * 10;
-                System.out.println("rest :" + rest);
-                System.out.println("basenumber :" + baseNumber);
-                if ( rest == searchNumber  ) {
+            }
+            for (int testNum:integers) {
+                if (testNum==searchNumber)
                     enters++;
-                }
-            } while (baseNumber > searchNumber);
-        if ( baseNumber == searchNumber ) {
-            enters++;
-        }
-        }
+            }
+
+
+
         System.out.println("Final enters :" + enters);
     }
 }
