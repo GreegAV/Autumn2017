@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Staff {
+
     public static void enterNum() {
         Scanner scn = new Scanner(System.in);
         System.out.print("Число-база: ");
         long baseNumber = scn.nextLong();
-        long baseNumberBackup=baseNumber;
+        long baseNumberBackup = baseNumber;
 
         System.out.print("Цифра для поиска: ");
         int searchNumber = scn.nextInt();
@@ -27,6 +28,7 @@ public class Staff {
             integers.add(0, (int) baseNumber % 10);
             baseNumber /= 10;
         }
+
         for (int testNum : integers) {
             if (testNum == searchNumber) {
                 enters++;
