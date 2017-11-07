@@ -1,23 +1,33 @@
 package les05.Car;
 
 /**
- * Created by avg-m on 03/11/2017.
+ * У колес может быть размер
+ * Колеса могут быть в плохом состоянии
  */
 public class Wheel {
     private int radius;
-    boolean okStatus;
+    private boolean okStatus;
 
     public Wheel(int radius, boolean okStatus) {
-        this.radius = radius;
-        this.okStatus = okStatus;
+        this.setRadius(radius);
+        this.setOkStatus(okStatus);
     }
 
-    public int getRadius() {
-        return radius;
-    }
 
     public void setRadius(int radius) {
-        this.radius = radius;
+
+        if (radius < 0) {
+            System.out.println("Колеса не могут иметь отрицательный размер. Катаемся на стандартных 14\"!");
+            this.radius = 14;
+        } else {
+            this.radius = radius;
+            if (radius > 22) {
+                System.out.println("BigFoot? :)");
+            } else if ((radius < 10) && (radius > 0)) {
+                System.out.println("Stroller? :)");
+            }
+        }
+
     }
 
 
@@ -28,11 +38,6 @@ public class Wheel {
     public void setOkStatus(boolean okStatus) {
         this.okStatus = okStatus;
     }
-
-
-
-
-
 
 
 }

@@ -5,17 +5,28 @@ package les05.Car;
  колесо, вывести на консоль марку автомобиля.
  */
 
+import java.util.Scanner;
+
 public class Runner {
     public static void main(String[] args) {
-        Car car = new Car("Daewoo", "Lanos", "Red", 50, 25.0, 15, true);
-        if (car.hasFuel()) {
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("Введите марку авто : ");
+        String carBrand=scanner.nextLine();
+        System.out.println("Сколько топлива в баке : ");
+        double carTank=scanner.nextDouble();
+        System.out.println("Введите размер колес : ");
+        int wheelRadius=scanner.nextInt();
+        System.out.println("Колеса исправны? ");
+        boolean wheelsOK=scanner.hasNextBoolean();
+
+        Car car = new Car(carBrand, carTank, wheelRadius, wheelsOK);
+
+        System.out.println("Создана машина марки "+car.modelCar());
+
+        if (car.checkStatus()){
             car.drive();
-        } else {
-            car.fillCar(10);
         }
-        if (!car.isOkWheels()) {
-            car.changeWheel();
-        }
+
 
     }
 

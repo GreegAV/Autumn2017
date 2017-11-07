@@ -4,33 +4,33 @@ package les05.Car;
  колесо, вывести на консоль марку автомобиля.
  */
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Car {
     private String model;
-    private String brand;
-    private String color;
-    private int speed;
     private double tank;
-    private Wheel wheels[] = new Wheel[4];
-    private int wheelRadius;
+    private ArrayList<Wheel> wheels = new ArrayList<>();
     private boolean driving;
 
-    public Car(String brand, String model, String color, int speed, double tank, int wheelRadius, boolean wheelsOK) {
+    public Car(String model, double tank, int wheelRadius, boolean wheelsOK) {
         this.model = model;
-        this.brand = brand;
-        this.color = color;
-        this.speed = speed;
-        this.tank = tank;
-        for (Wheel wheel : wheels) {
-            wheel = new Wheel(wheelRadius, wheelsOK);
+        if (tank>50) {
+            System.out.println("Столько топлива в бак не влезет. Просто заполняю до полного. ");
+            tank=50.0;
+        }
+        this.tank=(tank>0)?tank:0;
+
+        for (int i=0;i<4;i++) {
+            wheels.add(new Wheel(wheelRadius,wheelsOK));
         }
         this.driving = false;
 
     }
 
     public boolean isOkWheels() {
-        boolean okWheels;
-        for (Wheel wheel : this.wheels) {
-            if (!wheel.okStatus) return false;
+        for (Wheel wheel:wheels) {
+            if (!wheel.isOkStatus()) return false;
         }
         return true;
     }
@@ -42,12 +42,12 @@ public class Car {
 
     public Car() {
         model = "Undefined";
-        brand = "Undefined";
-        color = "Undefined";
-        speed = 0;
         tank = 0;
-        wheelRadius = 14;
+        for (Wheel wheel:wheels) {
+            wheels.add(new Wheel(14, true));
+        }
         driving = false;
+
 
     }
 
@@ -66,7 +66,9 @@ public class Car {
 
     public void fillCar(double fillLiters) {
         if ((50.0 - this.tank) < fillLiters) {
-            System.out.println("В бак столько не влезет.");
+            System.out.println("В бак столько не влезет. Заливаю до полного.");
+            this.tank=50.0;
+
         } else {
             this.tank += fillLiters;
         }
@@ -74,16 +76,40 @@ public class Car {
     }
 
     boolean hasFuel() {
-        return (this.tank < 1) ? false : true;
+        return (this.tank < 10) ? false : true;
     }
 
 
     public void changeWheel() {
-        System.out.println("Меняем колесо");
-        this.okWheels = true;
+        for (int i = 0; i <wheels.size() ; i++) {
+            Wheel wheel=wheels.get(0);
+            wheels.remove(0);
+            wheel.setOkStatus(true);
+            wheels.add(wheel);
+        }
+        System.out.println("Проверяем и меняем колеса");
+
     }
 
     public String modelCar() {
         return this.model;
+    }
+
+    public boolean checkStatus() {
+        if (this.hasFuel()) {
+            System.out.println("Топлива достаточно.");
+        } else {
+            System.out.println("С таким запасом топлива далеко не уехать. Сколько залить топлива?");
+
+            this.fillCar(new Scanner(System.in).nextDouble());
+        }
+
+        if (!this.isOkWheels()) {
+            System.out.println("На таких колесах далеко не уедешь");
+            this.changeWheel();
+        }
+
+        return true;
+
     }
 }
