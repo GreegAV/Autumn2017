@@ -10,10 +10,9 @@ public class Car {
     private String color;
     private int speed;
     private double tank;
-    private Wheel wheels[]=new Wheel[4];
+    private Wheel wheels[] = new Wheel[4];
     private int wheelRadius;
     private boolean driving;
-    private boolean okWheels;
 
     public Car(String brand, String model, String color, int speed, double tank, int wheelRadius, boolean wheelsOK) {
         this.model = model;
@@ -22,15 +21,20 @@ public class Car {
         this.speed = speed;
         this.tank = tank;
         for (Wheel wheel : wheels) {
-            wheel = new Wheel(wheelRadius);
+            wheel = new Wheel(wheelRadius, wheelsOK);
         }
-        this.driving=false;
-        this.okWheels=wheelsOK;
+        this.driving = false;
 
     }
-    public boolean isOkWheels(){
-        return this.okWheels;
+
+    public boolean isOkWheels() {
+        boolean okWheels;
+        for (Wheel wheel : this.wheels) {
+            if (!wheel.okStatus) return false;
+        }
+        return true;
     }
+
     @Override
     public String toString() {
         return this.modelCar();
@@ -43,20 +47,20 @@ public class Car {
         speed = 0;
         tank = 0;
         wheelRadius = 14;
-        driving=false;
+        driving = false;
 
     }
 
-    public void drive(){
+    public void drive() {
         if (isDriving()) {
             System.out.println("И так уже едем :)");
         } else {
             System.out.println("Поехали!");
-            this.driving=true;
+            this.driving = true;
         }
     }
 
-    public boolean isDriving(){
+    public boolean isDriving() {
         return this.driving;
     }
 
@@ -76,9 +80,10 @@ public class Car {
 
     public void changeWheel() {
         System.out.println("Меняем колесо");
+        this.okWheels = true;
     }
 
-        public String modelCar() {
+    public String modelCar() {
         return this.model;
     }
 }

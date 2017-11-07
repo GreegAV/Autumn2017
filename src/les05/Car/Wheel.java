@@ -5,12 +5,12 @@ package les05.Car;
  */
 public class Wheel {
     private int radius;
+    boolean okStatus;
 
-    public Wheel(int radius) {
+    public Wheel(int radius, boolean okStatus) {
         this.radius = radius;
-        System.out.println("Создано колесо.");
+        this.okStatus = okStatus;
     }
-
 
     public int getRadius() {
         return radius;
@@ -19,6 +19,20 @@ public class Wheel {
     public void setRadius(int radius) {
         this.radius = radius;
     }
+
+
+    public boolean isOkStatus() {
+        return okStatus;
+    }
+
+    public void setOkStatus(boolean okStatus) {
+        this.okStatus = okStatus;
+    }
+
+
+
+
+
 
 
 }
