@@ -27,7 +27,6 @@ public class Wheel {
                 System.out.println("Stroller? :)");
             }
         }
-
     }
 
 
