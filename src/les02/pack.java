@@ -5,13 +5,34 @@ package les02;
  */
 public class pack {
     public static void main(String[] args) {
-        double i=Double.NaN;
+        Double i1=Double.NaN;
+        double i2=Double.NaN;
 
-        System.out.println(i);
-        if ( i != i )
-            System.out.println("Hi!");
+        int a=5;
+
+
+
+//        System.out.println(i1);
+        if ( i1 != i1 ) {
+            System.out.println("Hi1!");
+        }
+        else {
+            System.out.println("Fuck :(");
+        }
+
+//        System.out.println(i2);
+        if ( i2 != i2 )
+            System.out.println("Hi2!");
         else
             System.out.println("Fuck :(");
+
+//        int ii=1234567890;
+//        float f=ii;
+//        System.out.println(f);
+//        System.out.println((int)f);
+//
+
+
 
     }
 }

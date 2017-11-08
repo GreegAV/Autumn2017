@@ -11,7 +11,7 @@ public class Car implements Auto {
 
     public Car(String model, int tank, int wheelRadius, boolean wheelsOK) {
         this.model = model;
-        if (tank > 50) {
+        if ( tank > 50 ) {
             System.out.println("Столько топлива в бак не влезет. Просто заполняю до полного. ");
             tank = 50;
         }
@@ -24,13 +24,13 @@ public class Car implements Auto {
 
     public boolean isOkWheels() {
         for (Wheel wheel : wheels) {
-            if (!wheel.isOkStatus()) return false;
+            if ( !wheel.isOkStatus() ) return false;
         }
         return true;
     }
 
     public void drive() {
-        if (isDriving()) {
+        if ( isDriving() ) {
             System.out.println("И так уже едем :)");
         } else {
             System.out.println("Поехали!");
@@ -43,7 +43,7 @@ public class Car implements Auto {
     }
 
     public void fillCar(int fillLiters) {
-        if ((50 - this.tank) < fillLiters) {
+        if ( (50 - this.tank) < fillLiters ) {
             System.out.println("В бак столько не влезет. Заливаю до полного.");
             this.tank = 50;
         } else {
@@ -51,7 +51,7 @@ public class Car implements Auto {
         }
     }
 
-    boolean hasFuel() {
+    private boolean hasFuel() {
         return !(this.tank < 10);
     }
 
@@ -70,7 +70,7 @@ public class Car implements Auto {
     }
 
     public boolean checkStatus() {
-        if (this.hasFuel()) {
+        if ( this.hasFuel() ) {
             System.out.println("Топлива достаточно.");
         } else {
             System.out.println("С таким запасом топлива далеко не уехать. Сколько залить топлива?");
@@ -78,16 +78,17 @@ public class Car implements Auto {
             this.fillCar(new Scanner(System.in).nextInt());
         }
 
-        if (!this.isOkWheels()) {
+        if ( !this.isOkWheels() ) {
             System.out.println("На таких колесах далеко не уедешь");
             this.changeWheel();
         }
         return true;
     }
+
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if ( this == o ) return true;
+        if ( o == null || getClass() != o.getClass() ) return false;
 
         Car car = (Car) o;
         return this.modelCar().equals(car.modelCar());

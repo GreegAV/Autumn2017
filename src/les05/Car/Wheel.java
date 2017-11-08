@@ -15,7 +15,7 @@ public class Wheel {
 
 
     public void setRadius(int radius) {
-        if (radius < 0) {
+        if ( radius < 0 ) {
             System.out.println("Колеса не могут иметь отрицательный размер. Катаемся на стандартных 14\"!");
             this.radius = 14;
         } else {
@@ -34,11 +34,9 @@ public class Wheel {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
+        if ( this == o ) return true;
+        if ( o == null || getClass() != o.getClass() ) return false;
         Wheel wheel = (Wheel) o;
-
         return radius == wheel.radius;
     }
 

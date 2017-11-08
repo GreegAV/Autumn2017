@@ -16,9 +16,9 @@ public class Runner {
         int carTank = Integer.parseInt(scanner.nextLine());
         System.out.print("Введите размер колес : ");
         int wheelRadius = Integer.parseInt(scanner.nextLine());
-        if (wheelRadius > 22) {
+        if ( wheelRadius > 22 ) {
             System.out.println("BigFoot? :)");
-        } else if ((wheelRadius < 10) && (wheelRadius > 0)) {
+        } else if ( (wheelRadius < 10) && (wheelRadius > 0) ) {
             System.out.println("Stroller? :)");
         }
         System.out.print("Колеса исправны? ");
@@ -29,7 +29,7 @@ public class Runner {
 
         System.out.println("Создана машина марки " + car);
 
-        if (car.checkStatus()) {
+        if ( car.checkStatus() ) {
             car.drive();
         }
 
