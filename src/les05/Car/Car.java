@@ -91,4 +91,17 @@ public class Car implements Auto {
         }
         return true;
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Car car = (Car) o;
+        return this.modelCar().equals(car.modelCar());
+    }
+
+    @Override
+    public int hashCode() {
+        return this.hashCode();
+    }
 }

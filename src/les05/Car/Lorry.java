@@ -12,4 +12,18 @@ public class Lorry extends Car {
     public String toString() {
         return "Пикап " + super.toString() + " грузоподъёмностью " + carryLoad + " кг.";
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Lorry lorry = (Lorry) o;
+        return this.modelCar().equals(lorry.modelCar());
+    }
+
+    @Override
+    public int hashCode() {
+        return this.hashCode();
+    }
 }
