@@ -32,5 +32,23 @@ public class Wheel {
         this.okStatus = okStatus;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        Wheel wheel = (Wheel) o;
+
+        return radius == wheel.radius;
+    }
+
+    @Override
+    public int hashCode() {
+        return radius;
+    }
+
+    @Override
+    public String toString() {
+        return "Это колесо " + radius + " радиуса.";
+    }
 }
