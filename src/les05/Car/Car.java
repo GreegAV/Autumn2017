@@ -9,15 +9,15 @@ import java.util.Scanner;
 
 public class Car {
     private String model;
-    private double tank;
+    private int tank;
     private ArrayList<Wheel> wheels = new ArrayList<>();
     private boolean driving;
 
-    public Car(String model, double tank, int wheelRadius, boolean wheelsOK) {
+    public Car(String model, int tank, int wheelRadius, boolean wheelsOK) {
         this.model = model;
         if (tank > 50) {
             System.out.println("Столько топлива в бак не влезет. Просто заполняю до полного. ");
-            tank = 50.0;
+            tank = 50;
         }
         this.tank = (tank > 0) ? tank : 0;
 
@@ -39,14 +39,6 @@ public class Car {
         return this.modelCar();
     }
 
-//    public Car() {
-//        model = "Undefined";
-//        tank = 0;
-//        for (Wheel wheel : wheels) {
-//            wheels.add(new Wheel(14, true));
-//        }
-//        driving = false;
-//    }
 
     public void drive() {
         if (isDriving()) {
@@ -61,10 +53,10 @@ public class Car {
         return this.driving;
     }
 
-    public void fillCar(double fillLiters) {
-        if ((50.0 - this.tank) < fillLiters) {
+    public void fillCar(int fillLiters) {
+        if ((50 - this.tank) < fillLiters) {
             System.out.println("В бак столько не влезет. Заливаю до полного.");
-            this.tank = 50.0;
+            this.tank = 50;
         } else {
             this.tank += fillLiters;
         }
@@ -75,13 +67,13 @@ public class Car {
     }
 
     public void changeWheel() {
+        System.out.println("Проверяем и меняем колеса");
         for (int i = 0; i < wheels.size(); i++) {
             Wheel wheel = wheels.get(0);
             wheels.remove(0);
             wheel.setOkStatus(true);
             wheels.add(wheel);
         }
-        System.out.println("Проверяем и меняем колеса");
     }
 
     public String modelCar() {
@@ -94,8 +86,9 @@ public class Car {
         } else {
             System.out.println("С таким запасом топлива далеко не уехать. Сколько залить топлива?");
 
-            this.fillCar(new Scanner(System.in).nextDouble());
+            this.fillCar(new Scanner(System.in).nextInt());
         }
+
         if (!this.isOkWheels()) {
             System.out.println("На таких колесах далеко не уедешь");
             this.changeWheel();
