@@ -1,13 +1,9 @@
 package les05.Car;
-/*
-Методы: ехать, заправляться, менять
- колесо, вывести на консоль марку автомобиля.
- */
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Car {
+public class Car implements Auto {
     private String model;
     private int tank;
     private ArrayList<Wheel> wheels = new ArrayList<>();

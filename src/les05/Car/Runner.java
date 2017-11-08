@@ -13,12 +13,17 @@ public class Runner {
         System.out.print("Введите марку авто : ");
         String carBrand = scanner.nextLine();
         System.out.print("Сколько топлива в баке : ");
-        int carTank = scanner.nextInt();
+        int carTank = Integer.parseInt(scanner.nextLine());
         System.out.print("Введите размер колес : ");
-        int wheelRadius = scanner.nextInt();
+        int wheelRadius = Integer.parseInt(scanner.nextLine());
+        if (wheelRadius > 22) {
+            System.out.println("BigFoot? :)");
+        } else if ((wheelRadius < 10) && (wheelRadius > 0)) {
+            System.out.println("Stroller? :)");
+        }
         System.out.print("Колеса исправны? ");
-
-        boolean wheelsOK=scanner.nextLine().equalsIgnoreCase("yes");
+        String wheelsStatus = scanner.nextLine();
+        boolean wheelsOK = wheelsStatus.equalsIgnoreCase("yes");
 
         Car car = new Car(carBrand, carTank, wheelRadius, wheelsOK);
 
@@ -28,13 +33,13 @@ public class Runner {
             car.drive();
         }
 
-        System.out.println("А теперь "+car+ " превращается...");
+        System.out.println("А теперь " + car + " превращается...");
         System.out.print("Введите грузоподъёмность : ");
-        int carryLoad=scanner.nextInt();
+        int carryLoad = scanner.nextInt();
 
-        Lorry lorry=new Lorry(carBrand,carTank,wheelRadius,wheelsOK,carryLoad);
+        Lorry lorry = new Lorry(carBrand, carTank, wheelRadius, true, carryLoad);
 
-        System.out.println("Получается "+ lorry);
+        System.out.println("Получается " + lorry);
     }
 
 }

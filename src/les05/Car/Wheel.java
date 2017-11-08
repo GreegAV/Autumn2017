@@ -15,17 +15,11 @@ public class Wheel {
 
 
     public void setRadius(int radius) {
-
         if (radius < 0) {
             System.out.println("Колеса не могут иметь отрицательный размер. Катаемся на стандартных 14\"!");
             this.radius = 14;
         } else {
             this.radius = radius;
-            if (radius > 22) {
-                System.out.println("BigFoot? :)");
-            } else if ((radius < 10) && (radius > 0)) {
-                System.out.println("Stroller? :)");
-            }
         }
     }
 
