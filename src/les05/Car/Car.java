@@ -16,7 +16,6 @@ public class Car implements Auto {
             tank = 50;
         }
         this.tank = (tank > 0) ? tank : 0;
-
         for (int i = 0; i < 4; i++) {
             wheels.add(new Wheel(wheelRadius, wheelsOK));
         }
@@ -29,12 +28,6 @@ public class Car implements Auto {
         }
         return true;
     }
-
-    @Override
-    public String toString() {
-        return this.modelCar();
-    }
-
 
     public void drive() {
         if (isDriving()) {
@@ -102,6 +95,11 @@ public class Car implements Auto {
 
     @Override
     public int hashCode() {
-        return this.hashCode();
+        return this.tank;
+    }
+
+    @Override
+    public String toString() {
+        return this.modelCar();
     }
 }

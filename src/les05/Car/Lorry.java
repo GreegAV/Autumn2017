@@ -24,6 +24,6 @@ public class Lorry extends Car {
 
     @Override
     public int hashCode() {
-        return this.hashCode();
+        return this.carryLoad;
     }
 }
