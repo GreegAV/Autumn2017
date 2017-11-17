@@ -1,6 +1,5 @@
-/**
- * Created by Victoria on 15.11.2017.
- */
+package Lesson_20171113;
+
 public interface IEngine {
     void start();
 }

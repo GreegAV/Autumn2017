@@ -1,4 +1,4 @@
-package les01;/**
+package Lesson_20171025;/**
  * Created by avg-m on 27/10/2017.
  */
 public class ClassName {

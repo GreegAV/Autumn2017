@@ -1,4 +1,4 @@
-package les05.Car;
+package Lesson_20171103.Car;
 
 public class Lorry extends Car {
     int carryLoad;

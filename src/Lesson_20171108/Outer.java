@@ -1,4 +1,4 @@
-package les06;
+package Lesson_20171108;
 
 public class Outer {
     int outer_x=100;
