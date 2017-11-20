@@ -1,4 +1,4 @@
-package les04.les04hw.Numbers3;
+package Lesson_20171101.les04hw.Numbers3;
 
 import java.util.Scanner;
 

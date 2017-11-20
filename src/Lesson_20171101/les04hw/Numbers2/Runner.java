@@ -9,7 +9,7 @@ package les04.les04hw.Numbers2;
 
 import java.util.ArrayList;
 
-import static les04.les04hw.Numbers2.Staff.*;
+import static Lesson_20171101.les04hw.Numbers2.Staff.*;
 
 public class Runner {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package les04.les04hw.Numbers4;
+package Lesson_20171101.les04hw.Numbers4;
 /*
 Напечатать числа в виде таблицы:
 а).
@@ -16,7 +16,7 @@ package les04.les04hw.Numbers4;
   4 3 2 1
 5 4 3 2 1
  */
-import static les04.les04hw.Numbers4.Staff.*;
+import static Lesson_20171101.les04hw.Numbers4.Staff.*;
 
 public class Runner {
     public static void main(String[] args) {

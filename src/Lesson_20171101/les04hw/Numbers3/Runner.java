@@ -1,6 +1,6 @@
-package les04.les04hw.Numbers3;
+package Lesson_20171101.les04hw.Numbers3;
 
-import static les04.les04hw.Numbers3.Staff.*;
+import static Lesson_20171101.les04hw.Numbers3.Staff.*;
 
 /*
 Напишите приложение, которое определяет через сколько целых лет

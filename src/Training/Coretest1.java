@@ -6,6 +6,10 @@ package Training;
 public class Coretest1 {
     int[] []x[];
 
+    int arr[]=new arr{10,100[];
+
+    }
+
 
 
 }
