@@ -1,9 +1,9 @@
-package les07;
+package Training;
 
 /**
  * Created by avg-m on 13/11/2017.
  */
-public class Test {
+public class ArrayLength {
 
     public static int arraylength(int[] myArray){
         int tmp;
