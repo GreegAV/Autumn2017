@@ -17,11 +17,16 @@ public class Runner {
 
     public static void main(String[] args) {
         String str="Dong-ding-dong";
-        String newStr="АБЫРВАЛГ";
+        String newStr="dong";
+        String newStr2="bong";
 
         System.out.println(countLetters(str));
         System.out.println(compareString(str, newStr));
-
+        System.out.println(toLowerString(str));
+        System.out.println(toUpperString(str));
+        System.out.println(stringIndexes(str,newStr));
+        System.out.println(replaceSubStr(str,newStr2));
+        System.out.println(countWords(str,newStr));
 
     }
 

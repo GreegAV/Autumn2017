@@ -27,5 +27,25 @@ public class Staff {
     public static String toLowerString(String string){
 
         return "";
+
+    } public static String toUpperString(String string){
+
+        return "";
     }
+
+    public static String stringIndexes(String string, String searchString) {
+
+        return "";
+    }
+
+    public static String replaceSubStr(String srcString, String resulStr) {
+
+        return "";
+    }
+
+    public static int countWords(String string, String searchString){
+
+        return 0;
+    }
+
 }
