@@ -51,15 +51,16 @@ public class Staff {
 
     // заменяет каждое вхождение слова dong на bong
     public static String replaceSubStr(String srcString, String searchStr, String replaceStr) {
-        String result="";
-        if (srcString.indexOf(searchStr)>=0) {
-            while (srcString.indexOf(searchStr)>=0){
-                result+=srcString.substring(0,srcString.indexOf(searchStr));
-                result+=replaceStr;
-                srcString=srcString.substring(srcString.indexOf(searchStr)+searchStr.length(),srcString.length());
-            }
-        }
-        return result;
+//        String result="";
+//        if (srcString.indexOf(searchStr)>=0) {
+//            while (srcString.indexOf(searchStr)>=0){
+//                result+=srcString.substring(0,srcString.indexOf(searchStr));
+//                result+=replaceStr;
+//                srcString=srcString.substring(srcString.indexOf(searchStr)+searchStr.length(),srcString.length());
+//            }
+//        }
+//        return result;
+        return srcString.replace(searchStr,replaceStr);
     }
 
     // находит все одинаковые слова, подсчитывая их количество
