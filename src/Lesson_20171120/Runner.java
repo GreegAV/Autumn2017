@@ -32,7 +32,7 @@ public class Runner {
         } else
             System.out.println("Подстрока " + newStr + " в исходной строке не найдена.");
 
-        if (replaceSubStr(str, newStr, newStr2).length()>0) {
+        if (replaceSubStr(str, newStr, newStr2).length() > 0) {
             System.out.println("Строка после замен :" + replaceSubStr(str, newStr, newStr2));
         } else
             System.out.println("Подстрока " + newStr + " в исходной строке не найдена. Заменять нечего.");
