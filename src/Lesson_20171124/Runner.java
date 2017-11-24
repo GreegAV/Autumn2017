@@ -15,8 +15,16 @@ public class Runner {
         npeCatcher();
         System.out.println();
 
-        System.out.println("Контроллируемое исключение.");
-        controlledException();
+        System.out.println("Контролируемое исключение.");
+        controlledException(5,1);
+        System.out.println();
+
+        System.out.println("Моделируемый StackOverflowError");
+        sofError();
+        System.out.println();
+
+        System.out.println("Моделируемый OutOfMemoryError");
+        oomError();
         System.out.println();
 
 
