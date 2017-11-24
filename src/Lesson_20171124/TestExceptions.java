@@ -16,7 +16,7 @@ public class TestExceptions {
         try {
             object.toString();
         } catch (Exception e) {
-            System.out.print("Beloved NPE :");
+            System.out.print("Beloved NPE :) :");
             System.out.println(e.toString());
         }
     }
