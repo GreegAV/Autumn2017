@@ -1,15 +1,6 @@
 package Lesson_20171124;
 
-import java.util.Scanner;
-
 public class TestExceptions {
-//    private int x;
-//    private int y;
-//
-//    public TestExceptions(int x, int y) {
-//        this.x = x;
-//        this.y = y;
-//    }
 
     public static void testException() {
         Object object = null;
@@ -21,7 +12,7 @@ public class TestExceptions {
         }
     }
 
-    private static void npe() throws NullPointerException {
+    private static void npe() {
         int q = 0;
         int a = 0;
         int z = a / q;
@@ -45,7 +36,7 @@ public class TestExceptions {
             } else
                 throw new IndexOutOfBoundsException();
         } catch (IndexOutOfBoundsException e) {
-            System.out.print("А нету столько! ");
+            // System.out.print("А нету столько! ");
             System.out.println(e.toString());
         } finally {
             System.out.println("Пересечение границ - чревато :)");

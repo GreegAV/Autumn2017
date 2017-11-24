@@ -5,9 +5,9 @@ import static Lesson_20171124.TestExceptions.*;
 public class Runner {
     public static void main(String[] args) {
 
-        TestExceptions testExceptions=new TestExceptions();
+        TestExceptions testExceptions = new TestExceptions();
 
-        System.out.println("Test NPE exception");
+        System.out.println("Test NullPointerException");
         testException();
         System.out.println();
 
@@ -16,7 +16,11 @@ public class Runner {
         System.out.println();
 
         System.out.println("Контролируемое исключение.");
-        controlledException(5,1);
+        System.out.println("Параметры ОК, ошибки не появляется. ");
+        controlledException(5, 1);
+        System.out.println();
+        System.out.print("А теперь параметры не ОК и получаем : ");
+        controlledException(5, 10);
         System.out.println();
 
         System.out.println("Моделируемый StackOverflowError");
@@ -26,9 +30,6 @@ public class Runner {
         System.out.println("Моделируемый OutOfMemoryError");
         oomError();
         System.out.println();
-
-
-
 
 
     }
