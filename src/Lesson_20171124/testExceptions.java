@@ -7,23 +7,23 @@ public class testExceptions {
         try {
             object.toString();
         } catch (Exception e) {
-            System.out.println("Beloved NPE :)");
-            e.printStackTrace();
+            System.out.print("Beloved NPE :");
+            System.out.println(e.toString());
         }
     }
 
-    private void throwException() throws NullPointerException {
-        int x = 0;
-        int y = 10;
-        int z = y/x;
+    private static void npe() throws NullPointerException {
+        int q=0;
+        int a=0;
+        int z = a/q;
     }
 
-    public void catchException() {
+    public static void npeCatcher() {
         try {
-            throwException();
+            npe();
         } catch(ArithmeticException e) {
-            e.printStackTrace();
-            System.out.println(e);
+            System.out.print("Получили :");
+            System.out.println(e.toString());
         } finally {
             System.out.println("На ноль делить нельзя!(c)");
         }
