@@ -7,21 +7,27 @@ public class Staff {
     private static JFileChooser fc;
 
     public static File getFileName() {
-        fc = new JFileChooser();
-        fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        try {
+            fc = new JFileChooser();
+            fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
 
-        if (fc.showOpenDialog(fc) > 1) {
-            System.exit(0);
+            if (fc.showOpenDialog(fc) > 1) {
+                System.exit(0);
+            }
+
+            File file = fc.getSelectedFile();
+            return file;
+
+        } catch (Exception e) {
+            System.out.println("Файл не выбран.");
+            return null;
         }
-
-        File file = fc.getSelectedFile();
-        return file;
     }
 
 
     static void charCompare() {
         int offsetDifference = 0;
-        boolean different=false;
+        boolean different = false;
 
         System.out.print("Выберите первый файл для сравнения : ");
         File fname1 = getFileName();
@@ -41,20 +47,19 @@ public class Staff {
                 int c1 = file1.read();  //первый символ первого файла
                 int c2 = file2.read();  //первый симовл второго файла
 //                System.out.println((char) c1+" - "+(char) c2);
-                if (c1==c2){
+                if (c1 == c2) {
                     offsetDifference++;
                     while ((c1 != -1) && (c2 != -1) && !different) {
                         c1 = file1.read();
                         c2 = file2.read();
-                        if (c1==c2) {
+                        if (c1 == c2) {
                             offsetDifference++;
-                        }
-                        else {
-                            different=true;
+                        } else {
+                            different = true;
                         }
                     }
                 } else {
-                    different=true;
+                    different = true;
                 }
             }
 
@@ -63,8 +68,8 @@ public class Staff {
                 System.out.println(" различий не обнаружено");
             } else {
                 System.out.println("\n- размеры файлов: " + fname1.getName() + " - " + filesize1 + " Байт, " + fname2.getName() + " - " + filesize2 + " Байт");
-                System.out.println("- первое отличие найдено на: " + (offsetDifference+1));
-                System.out.println("- общее количество отличающихся байт в первом файле: " + (filesize1 - offsetDifference-1));
+                System.out.println("- первое отличие найдено на: " + (offsetDifference + 1));
+                System.out.println("- общее количество отличающихся байт в первом файле: " + (filesize1 - offsetDifference - 1));
             }
         } catch (IOException e) {
             System.out.println("Странно... " + e.toString());
@@ -73,7 +78,7 @@ public class Staff {
 
     static void byteCompare() {
         int offsetDifference = 0;
-        boolean different=false;
+        boolean different = false;
 
         System.out.print("Выберите первый файл для сравнения : ");
         File fname1 = getFileName();
@@ -93,20 +98,19 @@ public class Staff {
                 int c1 = fstream1.read();  //первый символ первого файла
                 int c2 = fstream2.read();  //первый символ второго файла
 //                System.out.println((char) c1+" - "+(char) c2);
-                if (c1==c2){
+                if (c1 == c2) {
                     offsetDifference++;
                     while ((c1 != -1) && (c2 != -1) && !different) {
                         c1 = fstream1.read();
                         c2 = fstream2.read();
-                        if (c1==c2) {
+                        if (c1 == c2) {
                             offsetDifference++;
-                        }
-                        else {
-                            different=true;
+                        } else {
+                            different = true;
                         }
                     }
                 } else {
-                    different=true;
+                    different = true;
                 }
             }
 
@@ -115,11 +119,10 @@ public class Staff {
                 System.out.println(" различий не обнаружено");
             } else {
                 System.out.println("\n- размеры файлов: " + fname1.getName() + " - " + filesize1 + " Байт, " + fname2.getName() + " - " + filesize2 + " Байт");
-                System.out.println("- первое отличие найдено на: " + (offsetDifference+1));
-                System.out.println("- общее количество отличающихся байт в первом файле: " + (filesize1 - offsetDifference-1));
+                System.out.println("- первое отличие найдено на: " + (offsetDifference + 1));
+                System.out.println("- общее количество отличающихся байт в первом файле: " + (filesize1 - offsetDifference - 1));
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             System.out.println(e.toString());
         }
 
