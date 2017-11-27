@@ -1,5 +1,6 @@
 package Lesson_20171127;
 
+import javax.jnlp.FileContents;
 import javax.swing.*;
 import java.io.*;
 
@@ -8,7 +9,7 @@ public class Staff {
 
     public static File getFileName() {
         try {
-            fc = new JFileChooser();
+            fc = new JFileChooser(".");
             fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
 
             if (fc.showOpenDialog(fc) > 1) {
