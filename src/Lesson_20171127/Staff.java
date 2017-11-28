@@ -1,5 +1,7 @@
 package Lesson_20171127;
 
+import com.sun.org.apache.xerces.internal.impl.io.UTF8Reader;
+
 import javax.jnlp.FileContents;
 import javax.swing.*;
 import java.io.*;
@@ -47,7 +49,6 @@ public class Staff {
             if (filesize1 > 0 && filesize2 > 0) {
                 int c1 = file1.read();  //первый символ первого файла
                 int c2 = file2.read();  //первый симовл второго файла
-//                System.out.println((char) c1+" - "+(char) c2);
                 if (c1 == c2) {
                     offsetDifference++;
                     while ((c1 != -1) && (c2 != -1) && !different) {
@@ -98,7 +99,6 @@ public class Staff {
             if (filesize1 > 0 && filesize2 > 0) {
                 int c1 = fstream1.read();  //первый символ первого файла
                 int c2 = fstream2.read();  //первый символ второго файла
-//                System.out.println((char) c1+" - "+(char) c2);
                 if (c1 == c2) {
                     offsetDifference++;
                     while ((c1 != -1) && (c2 != -1) && !different) {
@@ -128,4 +128,6 @@ public class Staff {
         }
 
     }
+
+
 }
