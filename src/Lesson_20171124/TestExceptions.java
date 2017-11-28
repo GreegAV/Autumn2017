@@ -41,7 +41,6 @@ public class TestExceptions {
         } finally {
             System.out.println("Пересечение границ - чревато :)");
         }
-
     }
 
     public static void sofError() {
@@ -58,6 +57,5 @@ public class TestExceptions {
         } catch (OutOfMemoryError e) {
             System.out.println("Смоделированый " + e.toString());
         }
-
     }
 }
