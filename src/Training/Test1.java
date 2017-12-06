@@ -11,5 +11,6 @@ public class Test1 {
         System.out.println("Testing branches");
         System.out.println("Testing 2");
         System.out.println("Test 3");
+        System.out.println();
     }
 }
