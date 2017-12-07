@@ -5,7 +5,7 @@ import java.util.LinkedList;
 public class BarberShop {
     boolean served = false;
     int freeSeats;
-    LinkedList<Thread> waitingList = new LinkedList<Thread>() {};
+    LinkedList<Thread> waitingList = new LinkedList<Thread>();
 
     private BarberShop(int freeSeats) {
         this.freeSeats = freeSeats;
@@ -46,7 +46,7 @@ public class BarberShop {
     
     public static void main(String[] args) {
         int freeSeats = 4;
-        LinkedList<Thread> clients = new LinkedList<Thread>() {};
+        LinkedList<Thread> clients = new LinkedList<Thread>();
         BarberShop barberShop = new BarberShop(freeSeats);
         Thread barber = new Thread(new Barber(barberShop), "БарберМен");
         barber.start();
