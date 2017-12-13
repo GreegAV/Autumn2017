@@ -1,8 +1,7 @@
 package Lesson_20171127;
 
-import com.sun.org.apache.xerces.internal.impl.io.UTF8Reader;
+//import com.sun.org.apache.xerces.internal.impl.io.UTF8Reader;
 
-import javax.jnlp.FileContents;
 import javax.swing.*;
 import java.io.*;
 
