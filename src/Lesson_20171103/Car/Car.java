@@ -29,6 +29,7 @@ public class Car implements Auto {
         return true;
     }
 
+    @Override
     public void drive() {
         if ( isDriving() ) {
             System.out.println("И так уже едем :)");
@@ -42,6 +43,7 @@ public class Car implements Auto {
         return this.driving;
     }
 
+    @Override
     public void fillCar(int fillLiters) {
         if ( (50 - this.tank) < fillLiters ) {
             System.out.println("В бак столько не влезет. Заливаю до полного.");
@@ -55,6 +57,7 @@ public class Car implements Auto {
         return !(this.tank < 10);
     }
 
+    @Override
     public void changeWheel() {
         System.out.println("Проверяем и меняем колеса");
         for (int i = 0; i < wheels.size(); i++) {
